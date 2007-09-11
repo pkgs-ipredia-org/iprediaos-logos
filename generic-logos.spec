@@ -4,12 +4,13 @@ Version: 7.92.0
 Release: 1%{?dist}
 Group: System Environment/Base
 Source0: generic-logos-%{version}.tar.bz2
-License: Damned If I Know
+License: GPLv2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 Obsoletes: redhat-logos
 Provides: redhat-logos = %{version}-%{release}
 Provides: system-logos = %{version}-%{release}
+Conflicts: fedora-logos
 Conflicts: kdebase <= 3.1.5
 Conflicts: anaconda-images <= 10
 Conflicts: redhat-artwork <= 5.0.5
@@ -70,4 +71,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Tue Sep 11 2007 Bill Nottinghan <notting@redhat.com> - 7.92.0-1
-- initial packaging. Forked from fedora-logos
+- initial packaging. Forked from fedora-logos, adapted from the Fedora
+  Art project's Infinity theme
