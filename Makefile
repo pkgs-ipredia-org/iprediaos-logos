@@ -1,21 +1,21 @@
-NAME = fedora-logos
+NAME = generic-logos
 XML = backgrounds/desktop-backgrounds-fedora.xml
 
 all: update-po archive
 
 archive: 
-	export VERSION=`awk --field-separator=' ' '/^Version:/ { print $$2 }' fedora-logos.spec` ; \
+	export VERSION=`awk --field-separator=' ' '/^Version:/ { print $$2 }' generic-logos.spec` ; \
 	export CVSTAG=FEDORA_LOGOS_`echo $$VERSION | sed s/\\\./_/g` ; \
 	export TMPCVS=cvs-checkout-$$VERSION ; \
-	export DISTDIR=fedora-logos-$$VERSION ; \
-	export SRCDIR=../$$TMPCVS/fedora-logos ; \
+	export DISTDIR=generic-logos-$$VERSION ; \
+	export SRCDIR=../$$TMPCVS/generic-logos ; \
 	echo VERSION=$$VERSION CVSTAG=$$CVSTAG TMPCVS=$$TMPCVS DISTDIR=$$DISTDIR ; \
 	export CVSROOT=`cat CVS/Root` ; \
 	cvs tag -F $$CVSTAG . ; \
 	/bin/rm -rf $$DISTDIR ; \
 	/bin/rm -rf $$TMPCVS ; \
 	mkdir -p $$TMPCVS ; \
-	(cd $$TMPCVS && cvs -Q -d $$CVSROOT export -r$$CVSTAG fedora-logos && cd $$SRCDIR && make update-po) ; \
+	(cd $$TMPCVS && cvs -Q -d $$CVSROOT export -r$$CVSTAG generic-logos && cd $$SRCDIR && make update-po) ; \
 	mkdir -p $$DISTDIR ; \
 	mkdir -p $$DISTDIR/redhat-pixmaps ; \
 	mkdir -p $$DISTDIR/bootloader ; \
@@ -37,7 +37,7 @@ archive:
 	mkdir -p $$DISTDIR/applications/screensavers/ ; \
 	mkdir -p $$DISTDIR/backgrounds/images ; \
 	cd $$DISTDIR ; \
-	cp -f $$SRCDIR/fedora-logos.spec . ; \
+	cp -f $$SRCDIR/generic-logos.spec . ; \
 	cp -f $$SRCDIR/Makefile . ; \
 	cp -f $$SRCDIR/COPYING . ; \
 	cp -f $$SRCDIR/redhat-pixmaps/*.{png,xbm,xpm,tif} redhat-pixmaps ; \
@@ -61,8 +61,8 @@ archive:
 	cp -f $$SRCDIR/backgrounds/*.xml backgrounds/ ; \
 	cp -f $$SRCDIR/backgrounds/images/* backgrounds/images ; \
 	cd ..; \
-	tar -cv --bzip2 -f fedora-logos-$$VERSION.tar.bz2 $$DISTDIR ; \
-	echo "Wrote fedora-logos-$$VERSION.tar.bz2"
+	tar -cv --bzip2 -f generic-logos-$$VERSION.tar.bz2 $$DISTDIR ; \
+	echo "Wrote generic-logos-$$VERSION.tar.bz2"
 
 update-po:
 	@echo "updating pot files..."
