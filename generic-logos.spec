@@ -1,6 +1,6 @@
 Name: generic-logos
 Summary: Icons and pictures
-Version: 7.92.0
+Version: 7.92.1
 Release: 1%{?dist}
 Group: System Environment/Base
 Source0: generic-logos-%{version}.tar.bz2
@@ -50,6 +50,11 @@ for i in gnome-splash/* ; do
   install -m 644 $i $RPM_BUILD_ROOT%{_datadir}/pixmaps/splash
 done
 
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/pixmaps
+for i in pixmaps/* ; do
+  install -m 644 $i $RPM_BUILD_ROOT%{_datadir}/pixmaps
+done
+
 (cd anaconda; make DESTDIR=$RPM_BUILD_ROOT install)
 
 %clean
@@ -70,6 +75,9 @@ rm -rf $RPM_BUILD_ROOT
 # end i386 bits
 
 %changelog
+* Thu Sep 13 2007 Bill Nottingham <notting@redhat.com> - 7.92.1-1
+- add powered-by logo (#250676)
+
 * Tue Sep 11 2007 Bill Nottinghan <notting@redhat.com> - 7.92.0-1
 - initial packaging. Forked from fedora-logos, adapted from the Fedora
   Art project's Infinity theme
