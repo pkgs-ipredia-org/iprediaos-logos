@@ -67,8 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/rhgb/*
 %{_datadir}/anaconda/pixmaps/*
 %{_datadir}/pixmaps/*
-/usr/lib/anaconda-runtime/boot/*png
-/usr/lib/anaconda-runtime/*.sh
 /usr/lib/anaconda-runtime/*.jpg
 # should be ifarch i386
 /boot/grub/splash.xpm.gz
