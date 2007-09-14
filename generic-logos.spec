@@ -75,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Thu Sep 13 2007 Bill Nottingham <notting@redhat.com> - 7.92.1-1
 - add powered-by logo (#250676)
+- updated rhgb logo (<duffy@redhat.com>)
 
 * Tue Sep 11 2007 Bill Nottinghan <notting@redhat.com> - 7.92.0-1
 - initial packaging. Forked from fedora-logos, adapted from the Fedora
