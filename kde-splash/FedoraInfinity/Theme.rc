@@ -1,0 +1,19 @@
+# Fedora Infinity KSplash/ML Theme
+
+[KSplash Theme: FedoraInfinity]
+Name = Fedora Infinity
+Description = Fedora Infinity splash screen theme
+Version = 1.0
+Author = Lee Olson <clearbeast@gmail.com>, Chitlesh Goorah <chitlesh@fedoraproject.org>
+
+# Theme behaviour settings.
+Engine = Default
+
+# Should icons blink ala KDE, or not?
+Icons Flashing = true
+
+# Show progress bar?
+Always Show Progress = false
+
+# Status text colour
+Label Foreground = #FFFFFF

@@ -24,6 +24,7 @@ archive:
 	mkdir -p $$DISTDIR/gnome-splash ; \
 	mkdir -p $$DISTDIR/kde-splash/BlueCurve ; \
 	mkdir -p $$DISTDIR/kde-splash/Echo ; \
+	mkdir -p $$DISTDIR/kde-splash/FedoraInfinity ; \
 	mkdir -p $$DISTDIR/pixmaps ; \
 	mkdir -p $$DISTDIR/gdm ; \
 	mkdir -p $$DISTDIR/anaconda ; \
@@ -47,6 +48,7 @@ archive:
 	cp -f $$SRCDIR/gnome-splash/*.png gnome-splash ; \
 	cp -f $$SRCDIR/kde-splash/BlueCurve/* kde-splash/BlueCurve/ ; \
 	cp -f $$SRCDIR/kde-splash/Echo/* kde-splash/Echo/ ; \
+	cp -f $$SRCDIR/kde-splash/FedoraInfinity/* kde-splash/FedoraInfinity/ ; \
 	cp -f $$SRCDIR/pixmaps/*.{png,svg} pixmaps ; \
 	cp -af $$SRCDIR/gdm/* gdm; \
 	cp -f $$SRCDIR/anaconda/* anaconda ; \
