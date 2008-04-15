@@ -64,7 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-, root, root)
 %doc COPYING
 %{_datadir}/firstboot/*
-%{_datadir}/apps/ksplash/Themes/*
 %{_datadir}/rhgb/*
 %{_datadir}/anaconda/pixmaps/*
 %{_datadir}/pixmaps/*
