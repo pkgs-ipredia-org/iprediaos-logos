@@ -5,7 +5,7 @@ all: update-po archive
 
 archive: 
 	export VERSION=`awk --field-separator=' ' '/^Version:/ { print $$2 }' generic-logos.spec` ; \
-	export CVSTAG=FEDORA_LOGOS_`echo $$VERSION | sed s/\\\./_/g` ; \
+	export CVSTAG=GENERIC_LOGOS_`echo $$VERSION | sed s/\\\./_/g` ; \
 	export TMPCVS=cvs-checkout-$$VERSION ; \
 	export DISTDIR=generic-logos-$$VERSION ; \
 	export SRCDIR=../$$TMPCVS/generic-logos ; \
