@@ -1,6 +1,6 @@
 Name: generic-logos
 Summary: Icons and pictures
-Version: 8.0.2
+Version: 9.0.0
 Release: 1%{?dist}
 Group: System Environment/Base
 Source0: generic-logos-%{version}.tar.bz2
@@ -50,13 +50,6 @@ for i in gnome-splash/* ; do
   install -m 644 $i $RPM_BUILD_ROOT%{_datadir}/pixmaps/splash
 done
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/apps/ksplash/Themes/FedoraInfinity
-
-for i in kde-splash/FedoraInfinity/* ; do
-  install -m 644 $i $RPM_BUILD_ROOT%{_datadir}/apps/ksplash/Themes/FedoraInfinity
-done
-
-
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/pixmaps
 for i in pixmaps/* ; do
   install -m 644 $i $RPM_BUILD_ROOT%{_datadir}/pixmaps
@@ -81,6 +74,10 @@ rm -rf $RPM_BUILD_ROOT
 # end i386 bits
 
 %changelog
+* Tue Apr 15 2008 Bill Nottingham <notting@redhat.com> - 9.0.0-1
+- updates for current fedora-logos (much thanks to <duffy@redhat.com>)
+- remove KDE Infinity splash
+ 
 * Mon Oct 29 2007 Bill Nottingham <notting@redhat.com> - 8.0.2-1
 - Add Infinity splash screen for KDE
 
