@@ -1,10 +1,10 @@
 Name: generic-logos
 Summary: Icons and pictures
-Version: 10.0.0
+Version: 10.0.1
 Release: 1%{?dist}
 Group: System Environment/Base
 Source0: generic-logos-%{version}.tar.bz2
-License: GPLv2
+License: GPLv2 and LGPL
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
 Obsoletes: redhat-logos
@@ -14,6 +14,9 @@ Conflicts: fedora-logos
 Conflicts: kdebase <= 3.1.5
 Conflicts: anaconda-images <= 10
 Conflicts: redhat-artwork <= 5.0.5
+# For _kde4_appsdir macro:
+BuildRequires: kde-filesystem
+
 
 %description
 The generic-logos package contains various image files which can be
@@ -32,23 +35,27 @@ rm -rf $RPM_BUILD_ROOT
 
 # should be ifarch i386
 mkdir -p $RPM_BUILD_ROOT/boot/grub
-install -m 644 bootloader/grub-splash.xpm.gz $RPM_BUILD_ROOT/boot/grub/splash.xpm.gz
+install -p -m 644 bootloader/grub-splash.xpm.gz $RPM_BUILD_ROOT/boot/grub/splash.xpm.gz
 # end i386 bits
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/firstboot/pixmaps
 for i in firstboot/* ; do
-  install -m 644 $i $RPM_BUILD_ROOT%{_datadir}/firstboot/pixmaps
+  install -p -m 644 $i $RPM_BUILD_ROOT%{_datadir}/firstboot/pixmaps
 done
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/pixmaps/splash
 for i in gnome-splash/* ; do
-  install -m 644 $i $RPM_BUILD_ROOT%{_datadir}/pixmaps/splash
+  install -p -m 644 $i $RPM_BUILD_ROOT%{_datadir}/pixmaps/splash
 done
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/pixmaps
 for i in pixmaps/* ; do
-  install -m 644 $i $RPM_BUILD_ROOT%{_datadir}/pixmaps
+  install -p -m 644 $i $RPM_BUILD_ROOT%{_datadir}/pixmaps
 done
+
+mkdir -p $RPM_BUILD_ROOT%{_kde4_appsdir}/ksplash/Themes/SolarComet/1280x1024
+install -p -m 644 ksplash/SolarComet-kde.png $RPM_BUILD_ROOT%{_kde4_appsdir}/ksplash/Themes/SolarComet/1280x1024/logo.png
+
 
 (cd anaconda; make DESTDIR=$RPM_BUILD_ROOT install)
 
@@ -57,16 +64,27 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-, root, root)
-%doc COPYING
+%doc COPYING COPYING-kde-logo
 %{_datadir}/firstboot/*
 %{_datadir}/anaconda/pixmaps/*
 %{_datadir}/pixmaps/*
 /usr/lib/anaconda-runtime/*.jpg
+%{_kde4_appsdir}/ksplash/Themes/SolarComet/1280x1024/logo.png
 # should be ifarch i386
 /boot/grub/splash.xpm.gz
 # end i386 bits
 
 %changelog
+* Tue Oct 28 2008 Bill Nottingham <notting@redhat.com> - 10.0.1-1
+- incorporate KDE logo into upstream source distribution
+- fix system-logo-white.png for compiz bleeding (#468258)
+
+* Mon Oct 27 2008 Jaroslav Reznik <jreznik@redhat.com> - 10.0.0-3
+- Solar Comet generic splash logo redesign
+
+* Sun Oct 26 2008 Kevin Kofler <Kevin@tigcc.ticalc.org> - 10.0.0-2
+- Add (current version of) KDE logo for SolarComet KSplash theme
+
 * Thu Oct 23 2008 Bill Nottingham <notting@redhat.com> - 10.0.0-1
 - update for current fedora-logos, with Solar theme
 
