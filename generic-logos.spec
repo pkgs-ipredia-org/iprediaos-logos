@@ -1,6 +1,6 @@
 Name: generic-logos
 Summary: Icons and pictures
-Version: 10.0.1
+Version: 10.0.2
 Release: 1%{?dist}
 Group: System Environment/Base
 Source0: generic-logos-%{version}.tar.bz2
@@ -75,6 +75,9 @@ rm -rf $RPM_BUILD_ROOT
 # end i386 bits
 
 %changelog
+* Wed Dec  3 2008 Bill Nottingham <notting@redhat.com> - 10.0.2-1
+- fix syslinux splash (accidentally branded)
+
 * Tue Oct 28 2008 Bill Nottingham <notting@redhat.com> - 10.0.1-1
 - incorporate KDE logo into upstream source distribution
 - fix system-logo-white.png for compiz bleeding (#468258)
