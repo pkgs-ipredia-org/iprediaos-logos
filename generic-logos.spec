@@ -38,9 +38,9 @@ mkdir -p $RPM_BUILD_ROOT/boot/grub
 install -p -m 644 bootloader/splash.xpm.gz $RPM_BUILD_ROOT/boot/grub/splash.xpm.gz
 # end i386 bits
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/firstboot/pixmaps
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/firstboot/themes/generic
 for i in firstboot/* ; do
-  install -p -m 644 $i $RPM_BUILD_ROOT%{_datadir}/firstboot/pixmaps
+  install -p -m 644 $i $RPM_BUILD_ROOT%{_datadir}/firstboot/themes/generic
 done
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/pixmaps/splash
@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-, root, root)
 %doc COPYING COPYING-kde-logo
-%{_datadir}/firstboot/*
+%{_datadir}/firstboot/themes/*
 %{_datadir}/anaconda/pixmaps/*
 %{_datadir}/pixmaps/*
 /usr/lib/anaconda-runtime/*.jpg
