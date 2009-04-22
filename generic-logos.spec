@@ -53,8 +53,8 @@ for i in pixmaps/* ; do
   install -p -m 644 $i $RPM_BUILD_ROOT%{_datadir}/pixmaps
 done
 
-mkdir -p $RPM_BUILD_ROOT%{_kde4_appsdir}/ksplash/Themes/SolarComet/1280x1024
-install -p -m 644 ksplash/SolarComet-kde.png $RPM_BUILD_ROOT%{_kde4_appsdir}/ksplash/Themes/SolarComet/1280x1024/logo.png
+mkdir -p $RPM_BUILD_ROOT%{_kde4_appsdir}/ksplash/Themes/Leonidas/2048x1536
+install -p -m 644 ksplash/SolarComet-kde.png $RPM_BUILD_ROOT%{_kde4_appsdir}/ksplash/Themes/Leonidas/2048x1536/logo.png
 
 
 (cd anaconda; make DESTDIR=$RPM_BUILD_ROOT install)
@@ -69,7 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/anaconda/pixmaps/*
 %{_datadir}/pixmaps/*
 /usr/lib/anaconda-runtime/*.jpg
-%{_kde4_appsdir}/ksplash/Themes/SolarComet/1280x1024/logo.png
+%{_kde4_appsdir}/ksplash/Themes/Leonidas/2048x1536/logo.png
 # should be ifarch i386
 /boot/grub/splash.xpm.gz
 # end i386 bits
