@@ -35,7 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 
 # should be ifarch i386
 mkdir -p $RPM_BUILD_ROOT/boot/grub
-install -p -m 644 bootloader/grub-splash.xpm.gz $RPM_BUILD_ROOT/boot/grub/splash.xpm.gz
+install -p -m 644 bootloader/splash.xpm.gz $RPM_BUILD_ROOT/boot/grub/splash.xpm.gz
 # end i386 bits
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/firstboot/pixmaps
