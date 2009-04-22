@@ -1,6 +1,6 @@
 Name: generic-logos
 Summary: Icons and pictures
-Version: 10.0.99
+Version: 11.0.0
 Release: 1%{?dist}
 Group: System Environment/Base
 Source0: generic-logos-%{version}.tar.bz2
@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 # end i386 bits
 
 %changelog
-* Wed Apr 22 2009 Bill Nottingham <notting@redhat.com> - 10.0.99-1
+* Wed Apr 22 2009 Bill Nottingham <notting@redhat.com> - 11.0.0-1
 - updates for Fedora 11
 
 * Wed Dec  3 2008 Bill Nottingham <notting@redhat.com> - 10.0.2-1
