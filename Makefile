@@ -7,7 +7,7 @@ RELEASE := $(shell awk '/Release:/ { print $$2 }' $(NAME).spec | sed 's|%{?dist}
 TAG=$(NAME)-$(VERSION)-$(RELEASE)
 
 tag:
-	@git tag -a -m "Tag as $(TAG)" -f $(TAG)
+	@git tag -a -f -m "Tag as $(TAG)" -f $(TAG)
 	@echo "Tagged as $(TAG)"
 
 archive: tag
