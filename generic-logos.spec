@@ -1,6 +1,6 @@
 Name: generic-logos
 Summary: Icons and pictures
-Version: 11.0.0
+Version: 11.0.1
 Release: 1%{?dist}
 Group: System Environment/Base
 Source0: generic-logos-%{version}.tar.bz2
@@ -80,6 +80,9 @@ rm -rf $RPM_BUILD_ROOT
 # end i386 bits
 
 %changelog
+* Tue May 12 2009 Bill Nottingham <notting@redhat.com> - 11.0.1-1
+- Add new plymouth artwork (#500239)
+
 * Wed Apr 22 2009 Bill Nottingham <notting@redhat.com> - 11.0.0-1
 - updates for Fedora 11
 
