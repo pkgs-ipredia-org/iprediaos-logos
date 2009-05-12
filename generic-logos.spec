@@ -56,6 +56,10 @@ done
 mkdir -p $RPM_BUILD_ROOT%{_kde4_appsdir}/ksplash/Themes/Leonidas/2048x1536
 install -p -m 644 ksplash/SolarComet-kde.png $RPM_BUILD_ROOT%{_kde4_appsdir}/ksplash/Themes/Leonidas/2048x1536/logo.png
 
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/plymouth/themes/charge/
+for i in plymouth/charge/* ; do
+    install -p -m 644 $i $RPM_BUILD_ROOT%{_datadir}/plymouth/themes/charge/
+done
 
 (cd anaconda; make DESTDIR=$RPM_BUILD_ROOT install)
 
