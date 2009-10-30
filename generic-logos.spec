@@ -1,6 +1,6 @@
 Name: generic-logos
 Summary: Icons and pictures
-Version: 12.0
+Version: 12.2
 Release: 1%{?dist}
 Group: System Environment/Base
 Source0: generic-logos-%{version}.tar.bz2
@@ -61,6 +61,12 @@ for i in plymouth/charge/* ; do
     install -p -m 644 $i $RPM_BUILD_ROOT%{_datadir}/plymouth/themes/charge/
 done
 
+# File or directory names do not count as trademark infringement
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/icons/Fedora/48x48/apps/
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/icons/Fedora/scalable/apps/
+install -p -m 644 icons/Fedora/48x48/apps/* $RPM_BUILD_ROOT%{_datadir}/icons/Fedora/48x48/apps/
+install	-p -m 644 icons/Fedora/scalable/apps/* $RPM_BUILD_ROOT%{_datadir}/icons/Fedora/scalable/apps/
+
 (cd anaconda; make DESTDIR=$RPM_BUILD_ROOT install)
 
 %clean
@@ -71,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING COPYING-kde-logo
 %{_datadir}/firstboot/themes/*
 %{_datadir}/anaconda/pixmaps/*
+%{_datadir}/icons/Fedora/*/apps/*
 %{_datadir}/pixmaps/*
 %{_datadir}/plymouth/themes/charge/*
 /usr/lib/anaconda-runtime/*.jpg
@@ -80,6 +87,12 @@ rm -rf $RPM_BUILD_ROOT
 # end i386 bits
 
 %changelog
+* Fri Oct 30 2009 Bill Nottingham <notting@redhat.com> - 12.2-1
+- tweak anaconda.png/svg to match rest of icons (<duffy@redhat.com>)
+
+* Fri Oct 30 2009 Tom "spot" Callaway <tcallawa@redhat.com> - 12.1-1
+- 12.1 (add generic versions of anaconda.png/svg)
+
 * Thu Oct  1 2009 Bill Nottingham <notting@redhat.com> - 12.0-1
 - update for F12 (<duffy@redhat.com>)
 
