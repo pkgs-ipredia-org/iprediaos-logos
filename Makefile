@@ -13,7 +13,10 @@ tag:
 archive: tag
 	@git archive --format=tar --prefix=$(NAME)-$(VERSION)/ HEAD > $(NAME)-$(VERSION).tar
 	@bzip2 -f $(NAME)-$(VERSION).tar
-	@echo "The archive is at $(NAME)-$(VERSION).tar.bz2"
+	@echo "$(NAME)-$(VERSION).tar.bz2 created" 
+	@sha1sum $(NAME)-$(VERSION).tar.bz2 > $(NAME)-$(VERSION).sha1sum 
+	@scp $(NAME)-$(VERSION).tar.bz2 $(NAME)-$(VERSION).sha1sum fedorahosted.org:$(NAME) 
+	@echo "Everything done, files uploaded to Fedorahosted.org" 
 
 clean:
 	rm -f *~ *bz2
