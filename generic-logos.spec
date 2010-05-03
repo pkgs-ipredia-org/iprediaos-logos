@@ -1,6 +1,6 @@
 Name:       generic-logos
-Version:    12.2
-Release:    3%{?dist}
+Version:    13.0
+Release:    1%{?dist}
 Summary:    Icons and pictures
 
 Group:      System Environment/Base
@@ -96,6 +96,9 @@ rm -rf %{buildroot}
 # end i386 bits
 
 %changelog
+* Mon May  3 2010 Bill Nottingham <notting@redhat.com> - 13.0-1
+- Update for Fedora 13
+
 * Sat Dec 26 2009 Fabian Affolter <fabian@bernewireless.net> - 12.2-3
 - Changed SourceO to upstream link
 - Added URL and README
