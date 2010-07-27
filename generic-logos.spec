@@ -124,13 +124,13 @@ rm -rf %{buildroot}
 # end i386 bits
 
 %changelog
-* Tue Jul 27 2010 Bill Nottingham <notting@redhat.com> - 13.0.3-1
+* Tue Jul 27 2010 Bill Nottingham <notting@redhat.com> - 13.0.2-1
 - sync with current anaconda reality (#618598, <jkeating@redhat.com>)
 
-* Sat Jul 17 2010 Rex Dieter <rdieter@fedoraproject.org> - 13.0.2-3
+* Sat Jul 17 2010 Rex Dieter <rdieter@fedoraproject.org> - 13.0.1-3
 - fix %%postun scriptlet error
 
-* Fri Jun 25 2010 Rex Dieter <rdieter@fedoraproject.org> - 13.0.2-2
+* Fri Jun 25 2010 Rex Dieter <rdieter@fedoraproject.org> - 13.0.1-2
 - Fedora-KDE icons are now fedora-kde-icons-theme, not kde-settings
 - include icon scriplets
 - drop ancient Conflicts: kdebase ...
