@@ -1,5 +1,5 @@
 Name:       generic-logos
-Version:    13.0.2
+Version:    14.0
 Release:    1%{?dist}
 Summary:    Icons and pictures
 
@@ -124,6 +124,9 @@ rm -rf %{buildroot}
 # end i386 bits
 
 %changelog
+* Mon Sep 13 2010 Bill Nottingham <notting@redhat.com> - 14.0-1
+- update for Fedora 14
+
 * Tue Jul 27 2010 Bill Nottingham <notting@redhat.com> - 13.0.2-1
 - sync with current anaconda reality (#618598, <jkeating@redhat.com>)
 
