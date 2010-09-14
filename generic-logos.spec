@@ -114,7 +114,6 @@ rm -rf %{buildroot}
 %{_datadir}/firstboot/themes/*
 %{_datadir}/anaconda/boot/*
 %{_datadir}/anaconda/pixmaps/*
-%{_datadir}/anaconda/*jpg
 %{_datadir}/icons/Fedora/*/apps/*
 %{_datadir}/pixmaps/*
 %{_datadir}/plymouth/themes/charge/*
