@@ -20,7 +20,8 @@ Conflicts:  anaconda-images <= 10
 Conflicts:  redhat-artwork <= 5.0.5
 # For _kde4_* macros:
 BuildRequires: kde-filesystem
-
+# For generating the EFI icon
+BuildRequires: libicns-utils
 
 %description
 The generic-logos package contains various image files which can be
@@ -31,6 +32,7 @@ fedora-logos package.
 
 %prep
 %setup -q
+make
 
 %build
 #nothing to build
@@ -43,9 +45,14 @@ mkdir -p %{buildroot}/boot/grub
 install -p -m 644 bootloader/splash.xpm.gz %{buildroot}/boot/grub/splash.xpm.gz
 # end i386 bits
 
+
 mkdir -p %{buildroot}%{_datadir}/firstboot/themes/generic
 for i in firstboot/* ; do
   install -p -m 644 $i %{buildroot}%{_datadir}/firstboot/themes/generic
+done
+
+mkdir -p %{buildroot}%{_datadir}/pixmaps/bootloader
+  install -p -m 644 bootloader/fedora.icns %{buildroot}%{_datadir}/pixmaps/bootloader
 done
 
 mkdir -p %{buildroot}%{_datadir}/pixmaps/splash
@@ -124,6 +131,9 @@ rm -rf %{buildroot}
 # end i386 bits
 
 %changelog
+* Fri Dec 17 2010 Matthew Garrett <mjg@redhat.com> - 14.0.2-1
+- add an icon for Mac EFI bootloaders
+
 * Tue Sep 14 2010 Bill Nottingham <notting@redhat.com> - 14.0.1-1
 - fix for new anaconda paths
 
