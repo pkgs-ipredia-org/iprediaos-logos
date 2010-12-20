@@ -1,5 +1,5 @@
 Name:       generic-logos
-Version:    14.0.1
+Version:    14.0.2
 Release:    1%{?dist}
 Summary:    Icons and pictures
 
