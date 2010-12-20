@@ -139,6 +139,10 @@ rm -rf %{buildroot}
 * Fri Dec 17 2010 Matthew Garrett <mjg@redhat.com> - 14.0.2-1
 - add an icon for Mac EFI bootloaders
 
+* Tue Sep 28 2010 Rex Dieter <rdieter@fedoraproject.org> - 14.0.1-2
+- s/Fedora-KDE/oxygen/ icons (#615621)
+- use hardlink to save a little space
+ 
 * Tue Sep 14 2010 Bill Nottingham <notting@redhat.com> - 14.0.1-1
 - fix for new anaconda paths
 
