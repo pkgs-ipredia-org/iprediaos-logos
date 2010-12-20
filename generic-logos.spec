@@ -34,10 +34,9 @@ fedora-logos package.
 
 %prep
 %setup -q
-make
 
 %build
-#nothing to build
+make
 
 %install
 rm -rf %{buildroot}
@@ -88,7 +87,6 @@ install	-p -m 644 icons/Fedora/scalable/apps/* %{buildroot}%{_datadir}/icons/Fed
 # save some dup'd icons
 /usr/sbin/hardlink -v %{buildroot}/
 
-
 %post
 touch --no-create %{_datadir}/icons/Fedora || :
 touch --no-create %{_kde4_iconsdir}/oxygen ||:
@@ -131,7 +129,7 @@ rm -rf %{buildroot}
 %{_datadir}/pixmaps/*
 %{_datadir}/plymouth/themes/charge/*
 %{_kde4_appsdir}/ksplash/Themes/Leonidas/2048x1536/logo.png
-%{_kde4_iconsdir}/Fedora-KDE/
+%{_kde4_iconsdir}/oxygen/
 # should be ifarch i386
 /boot/grub/splash.xpm.gz
 # end i386 bits
