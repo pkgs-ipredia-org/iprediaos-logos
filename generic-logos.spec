@@ -23,6 +23,7 @@ BuildRequires: hardlink
 BuildRequires: kde-filesystem
 # For generating the EFI icon
 BuildRequires: libicns-utils
+Requires(post): coreutils
 
 %description
 The generic-logos package contains various image files which can be
@@ -138,6 +139,9 @@ rm -rf %{buildroot}
 %changelog
 * Fri Dec 17 2010 Matthew Garrett <mjg@redhat.com> - 14.0.2-1
 - add an icon for Mac EFI bootloaders
+
+* Mon Nov 29 2010 Bill Nottingham <notting@redhat.com> - 14.0.1-3
+- prereq coreutils (#657766)
 
 * Tue Sep 28 2010 Rex Dieter <rdieter@fedoraproject.org> - 14.0.1-2
 - s/Fedora-KDE/oxygen/ icons (#615621)
