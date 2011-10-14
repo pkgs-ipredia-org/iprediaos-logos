@@ -1,5 +1,5 @@
 Name:       generic-logos
-Version:    15.0.0
+Version:    16.0.0
 Release:    1%{?dist}
 Summary:    Icons and pictures
 
@@ -30,7 +30,7 @@ The generic-logos package contains various image files which can be
 used by the bootloader, anaconda, and other related tools. It can
 be used as a replacement for the fedora-logos package, if you are
 unable for any reason to abide by the trademark restrictions on the
-fedora-logos package.
+fedora-logos or fedora-remix-logos package.
 
 %prep
 %setup -q
@@ -134,6 +134,9 @@ rm -rf %{buildroot}
 # end i386 bits
 
 %changelog
+* Fri Oct 14 2011 Bill Nottingham <notting@redhat.com> - 16.0.0-1
+- update syslinux & firstboot splashes for F16
+
 * Tue Mar 22 2011 Bill Nottingham <notting@redhat.com> - 15.0.0-1
 - update for Fedora 15
 
