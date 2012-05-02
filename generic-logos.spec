@@ -1,5 +1,5 @@
 Name:       generic-logos
-Version:    16.0.0
+Version:    17.0.0
 Release:    1%{?dist}
 Summary:    Icons and pictures
 
@@ -54,6 +54,8 @@ done
 
 mkdir -p %{buildroot}%{_datadir}/pixmaps/bootloader
 install -p -m 644 bootloader/fedora.icns %{buildroot}%{_datadir}/pixmaps/bootloader
+install -p -m 644 bootloader/fedora.vol %{buildroot}%{_datadir}/pixmaps/bootloader
+install -p -m 644 bootloader/fedora-media.vol  %{buildroot}%{_datadir}/pixmaps/bootloader
 
 mkdir -p %{buildroot}%{_datadir}/pixmaps/splash
 for i in gnome-splash/* ; do
@@ -134,6 +136,9 @@ rm -rf %{buildroot}
 # end i386 bits
 
 %changelog
+* Wed May  2 2012 Bill Nottingham <notting@redhat.com> - 17.0.0-1
+- update for Fedora 17 - .vol files for mactel boot
+
 * Fri Oct 14 2011 Bill Nottingham <notting@redhat.com> - 16.0.0-1
 - update syslinux & firstboot splashes for F16
 
