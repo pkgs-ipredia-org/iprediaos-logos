@@ -1,5 +1,5 @@
-Name:       generic-logos
-Version:    17.0.0
+Name:       iprediaos-logos
+Version:    1.0.0
 Release:    1%{?dist}
 Summary:    Icons and pictures
 
