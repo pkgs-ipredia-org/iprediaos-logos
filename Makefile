@@ -1,4 +1,4 @@
-NAME = generic-logos
+NAME = iprediaos-logos
 XML = backgrounds/desktop-backgrounds-fedora.xml
 
 all: bootloader/fedora.icns
