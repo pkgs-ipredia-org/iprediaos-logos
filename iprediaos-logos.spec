@@ -1,6 +1,6 @@
 Name:       iprediaos-logos
 Version:    1.0.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Icons and pictures
 
 Group:      System Environment/Base
@@ -44,6 +44,9 @@ rm -rf %{buildroot}
 # should be ifarch i386
 mkdir -p %{buildroot}/boot/grub
 install -p -m 644 bootloader/splash.xpm.gz %{buildroot}/boot/grub/splash.xpm.gz
+mkdir -p $RPM_BUILD_ROOT/boot/grub2/themes/system/
+install -p -m 644 bootloader/background.png $RPM_BUILD_ROOT/boot/grub2/themes/system/background.png
+
 # end i386 bits
 
 
@@ -133,9 +136,13 @@ rm -rf %{buildroot}
 %{_kde4_iconsdir}/oxygen/
 # should be ifarch i386
 /boot/grub/splash.xpm.gz
+/boot/grub2/themes/system/background.png
 # end i386 bits
 
 %changelog
+* Sat May 19 2012 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 1.0.0-2
+- add grub2 background.png
+
 * Wed May  2 2012 Bill Nottingham <notting@redhat.com> - 17.0.0-1
 - update for Fedora 17 - .vol files for mactel boot
 
