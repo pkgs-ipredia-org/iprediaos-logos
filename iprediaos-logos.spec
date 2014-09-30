@@ -1,5 +1,5 @@
 Name:       iprediaos-logos
-Version:    1.1
+Version:    1.2
 Release:    1%{?dist}
 Summary:    Icons and pictures
 
@@ -31,6 +31,16 @@ used by the bootloader, anaconda, and other related tools. It can
 be used as a replacement for the fedora-logos package, if you are
 unable for any reason to abide by the trademark restrictions on the
 fedora-logos or fedora-remix-logos package.
+
+%package httpd
+Summary: IprediaOS-related icons and pictures used by httpd
+Provides: system-logos-httpd = %{version}-%{release}
+Provides: fedora-logos-httpd = %{version}-%{release}
+BuildArch: noarch
+
+%description httpd
+The generic-logos-httpd package contains image files which can be used by
+httpd.
 
 %prep
 %setup -q
@@ -173,6 +183,7 @@ rm -rf %{buildroot}
 %{_datadir}/icons/hicolor/*/apps/*
 %{_datadir}/icons/Bluecurve/*/apps/*
 %{_datadir}/pixmaps/*
+%exclude %{_datadir}/pixmaps/poweredby.png
 %{_datadir}/plymouth/themes/charge/*
 %{_kde4_appsdir}/ksplash/Themes/Leonidas/2048x1536/logo.png
 %{_kde4_iconsdir}/oxygen/
@@ -181,7 +192,14 @@ rm -rf %{buildroot}
 /boot/grub2/themes/system/background.png
 # end i386 bits
 
+%files httpd
+%doc COPYING
+%{_datadir}/pixmaps/poweredby.png
+
 %changelog
+* Tue Sep 30 2014 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 1.2-1
+- sync with upstream
+
 * Wed Jun 27 2012 Mattias Ohlsson <mattias.ohlsson@inprose.com> - 1.1-1
 - add png icons
 
